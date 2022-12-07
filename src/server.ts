@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import 'dotenv/config';
 import express from 'express';
 import { AppDataSource } from './database/data-source';
 
