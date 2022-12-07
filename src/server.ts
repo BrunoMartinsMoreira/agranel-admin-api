@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import express from 'express';
 import { AppDataSource } from './database/data-source';
 
