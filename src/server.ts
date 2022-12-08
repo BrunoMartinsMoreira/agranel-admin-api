@@ -1,13 +1,9 @@
 /* eslint-disable no-console */
-import 'dotenv/config';
-import express from 'express';
-import { AppDataSource } from './database/data-source';
+import { AppDataSource } from './infra/database/data-source';
+import app from './infra/http/app';
 
 AppDataSource.initialize().then(() => {
-  const app = express();
-
-  app.use(express.json());
-
+  console.log('Database in on fire');
   return app.listen(process.env.PORT, () => {
     console.log(`Server is runing on port ${process.env.PORT}`);
   });
