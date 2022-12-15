@@ -5,11 +5,11 @@
   "author": "Bruno Martins Moreira <bruno_moreira.19@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/server.ts' -e ts",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
     "build": "rm -rf ./dist && tsc && tsc-alias",
     "start": "node ./dist/server.js",
-    "migration:create": "typeorm-ts-node-commonjs -d ./src/infra/database/data-source.ts migration:generate ./src/infra/database/migrations/default",
-    "migration:run": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:run",
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/infra/database/data-source.ts migration:generate ./src/infra/database/migrations/CreateTableUsers",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/infra/database/data-source.ts migration:run",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
     "test:push": "yarn test --coverage"
@@ -32,7 +32,6 @@
     "ts-jest": "^29.0.2",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.7.0",
-    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.4",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
