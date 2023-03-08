@@ -1,0 +1,17 @@
+export enum DefaultMessages {
+  QUERY_SUCCESS = 'Consulta realizada com sucesso.',
+  CREATED = 'Criado com sucesso.',
+  UNKNOWN_ERROR = 'Houve um erro desconhecido, por favor, tente novamente. Se o erro persistir, entre em contato com o administrador do sistema.',
+  NAME_REQUIRED = 'Campo nome é obrigatório',
+  NAME_STRING = 'Campo nome deve ser uma string',
+  NAME_LENGTH = 'Campo nome deve ter no máximo 254 caraceters',
+  INVALID_PHONE_FORMAT = 'Campo telefone deve respeitar o formato 99999999999 sem máscaras e afins',
+  INVALID_EMAIL_FORMAT = 'Envie um e-mail num formato válido',
+  ID_PARAM_REQUIRED = 'Parâmetro id é obrigatório',
+  DATA_NOT_FOUND = 'Recurso não encontrado',
+  DELETED = 'Deletado com sucesso.',
+  UPDATED = 'Atualizado com sucesso.',
+  EMAIL_OR_PASS_INVALID = 'E-mail e/ou senha incorretos.',
+  TOKEN_NOT_FOUND = 'Token de autorização ausente ou inválido',
+  NOT_AUTHORIZED = 'Você não possui permissão',
+}
