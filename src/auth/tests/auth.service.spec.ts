@@ -57,8 +57,6 @@ describe('AuthService', () => {
       jest.spyOn(usersService, 'findByEmail').mockResolvedValue({
         id: '922e8215',
         name: 'Bruno',
-        type: 'pessoaFisica',
-        surname: 'surname',
         email: 'mail@mail2.com',
         password: 'hashpassword',
         createdAt: new Date('2023-03-06T02:26:49.370Z'),
@@ -75,8 +73,6 @@ describe('AuthService', () => {
       expect(response).toEqual({
         id: '922e8215',
         name: 'Bruno',
-        type: 'pessoaFisica',
-        surname: 'surname',
         email: 'mail@mail2.com',
         createdAt: new Date('2023-03-06T02:26:49.370Z'),
         updatedAt: new Date('2023-03-06T02:26:49.370Z'),
@@ -87,8 +83,6 @@ describe('AuthService', () => {
       jest.spyOn(usersService, 'findByEmail').mockResolvedValue({
         id: '922e8215',
         name: 'Bruno',
-        type: 'pessoaFisica',
-        surname: 'surname',
         email: 'mail@mail2.com',
         password: 'hashpassword',
         createdAt: new Date('2023-03-06T02:26:49.370Z'),
@@ -122,8 +116,6 @@ describe('AuthService', () => {
       const response = await authService.logout({
         id: '922e8215',
         name: 'Bruno',
-        type: 'pessoaFisica',
-        surname: 'surname',
         email: 'mail@mail2.com',
         password: 'hashpassword',
         createdAt: new Date('2023-03-06T02:26:49.370Z'),
@@ -144,9 +136,6 @@ describe('AuthService', () => {
       const response = await authService.login({
         id: '922e8215',
         name: 'Bruno',
-        type: 'pessoaFisica',
-        userType: 'cliente',
-        surname: 'surname',
         email: 'mail@mail2.com',
         password: 'hashpassword',
         createdAt: new Date('2023-03-06T02:26:49.370Z'),
@@ -163,8 +152,6 @@ describe('AuthService', () => {
         name: 'Bruno',
         email: 'mail@mail2.com',
         id: '922e8215',
-        type: 'pessoaFisica',
-        userType: 'cliente',
       });
     });
   });
@@ -181,9 +168,6 @@ describe('AuthService', () => {
         data: {
           id: '922e8215',
           name: 'Bruno',
-          type: 'pessoaFisica',
-          userType: 'cliente',
-          surname: 'surname',
           email: 'mail@mail2.com',
           password: 'hashpassword',
           createdAt: new Date('2023-03-06T02:26:49.370Z'),
@@ -201,8 +185,6 @@ describe('AuthService', () => {
         email: 'mail@mail2.com',
         id: '922e8215',
         name: 'Bruno',
-        type: 'pessoaFisica',
-        userType: 'cliente',
       });
     });
 
@@ -237,11 +219,8 @@ describe('AuthService', () => {
         data: {
           id: '922e8215',
           name: 'Bruno',
-          type: 'pessoaFisica',
-          surname: 'surname',
           email: 'mail@mail2.com',
           password: 'hashpassword',
-
           createdAt: new Date('2023-03-06T02:26:49.370Z'),
           updatedAt: new Date('2023-03-06T02:26:49.370Z'),
         },
@@ -273,8 +252,6 @@ describe('AuthService', () => {
         data: {
           id: '922e8215',
           name: 'Bruno',
-          type: 'pessoaFisica',
-          surname: 'surname',
           email: 'mail@mail2.com',
           password: 'hashpassword',
           createdAt: new Date('2023-03-06T02:26:49.370Z'),

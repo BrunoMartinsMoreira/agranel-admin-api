@@ -292,7 +292,7 @@ describe('UsersService', () => {
 
       expect(response).toEqual(mockFindOneUserReturn);
       expect(mockUsersRepo.findOne).toHaveBeenCalledWith({
-        select: ['id', 'password', 'name', 'email', 'type', 'userType'],
+        select: ['id', 'password', 'name', 'email'],
         where: { email: 'mail@mail2.com' },
       });
     });
@@ -441,8 +441,8 @@ describe('UsersService', () => {
       expect(mockUsersRepo.update).toHaveBeenCalledWith(
         { id: '922e8215' },
         {
-          resetPasswordCodeExpiration: new Date('2023-02-23T15:34:56Z'),
-          resetPasswordCode: '123456',
+          resetPasswordTokenExpiration: new Date('2023-02-23T15:34:56Z'),
+          resetPasswordToken: '123456',
         },
       );
 

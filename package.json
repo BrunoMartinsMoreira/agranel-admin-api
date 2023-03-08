@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "migration:generate": "yarn build && typeorm migration:generate ./src/database/migrations/CreateTableUsers -d dist/config/typeorm.config.js",
+    "migration:generate": "yarn build && typeorm migration:generate ./src/database/migrations/AlterTableUsersAddEmailUnique -d dist/config/typeorm.config.js",
     "migration:create": "typeorm migration:create ./src/database/migrations/CreateTableUsers",
     "migration:run": "yarn build && typeorm migration:run -d dist/config/typeorm.config.js",
     "migration:revert": "typeorm migration:revert -d dist/config/typeorm.config.js"
