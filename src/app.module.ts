@@ -6,9 +6,12 @@ import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
 import { ConfigModule } from '@nestjs/config';
 import { APP_PIPE, APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { typeOrmAsyncConfig } from './config/typeorm.config';
 
 @Module({
   imports: [
+    TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     MailerModule.forRoot({
       transport: {
         host: process.env.SMTP_DOMAIN,

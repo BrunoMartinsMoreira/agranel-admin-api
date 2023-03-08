@@ -40,8 +40,6 @@ export class AuthService {
       id: user.id,
       email: user.email,
       name: user.name,
-      type: user.type,
-      userType: user.userType,
     };
 
     const refresh_token = this.jwtService.sign(payload, {
@@ -58,8 +56,6 @@ export class AuthService {
       name: user.name,
       email: user.email,
       id: user.id,
-      type: user.type,
-      userType: user.userType,
     };
   }
 
@@ -111,8 +107,6 @@ export class AuthService {
       id: user.id,
       email: user.email,
       name: user.name,
-      type: user.type,
-      userType: user.userType,
     };
 
     return {
@@ -120,8 +114,6 @@ export class AuthService {
       name: user.name,
       email: user.email,
       id: user.id,
-      type: user.type,
-      userType: user.userType,
     };
   }
 }

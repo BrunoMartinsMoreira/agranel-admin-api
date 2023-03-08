@@ -4,6 +4,4 @@ export interface JwtTokenInterface {
   name: string;
   email: string;
   id: string;
-  type: string;
-  userType: string;
 }
