@@ -16,7 +16,7 @@ export class ServiceBase<T> {
   async getAll(input?: {
     where?: FindOptionsWhere<T>;
     order?: FindOptionsOrder<T>;
-    include?: string[] | any;
+    include?: string[];
     take?: number;
     page?: number;
   }): Promise<IDefaultResponse<Pagination<T>>> {
@@ -44,7 +44,7 @@ export class ServiceBase<T> {
   async count(input?: {
     where?: FindOptionsWhere<T>;
     order?: FindOptionsOrder<T>;
-    include?: string[] | any;
+    include?: string[];
     take?: number;
     page?: number;
   }): Promise<IDefaultResponse<number>> {
@@ -73,24 +73,7 @@ export class ServiceBase<T> {
       value: FindOptionsWhere<T>;
       columnName: string;
     }[],
-    validateRelationship?: boolean,
-    validateRelationshipValues?: {
-      value: any;
-      service: any;
-    }[],
   ): Promise<IDefaultResponse<T>> {
-    if (validateRelationship) {
-      for (const item of validateRelationshipValues) {
-        const response = await item.service.exists(item.value);
-
-        if (!response) {
-          return httpExceptionHandler(
-            `Nenhum id com o valor ${item.value} encontrado, portanto, não foi possível realizar o relacionamento`,
-          );
-        }
-      }
-    }
-
     if (validateUnique) {
       for (const item of validateUniqueValues) {
         await this.validateUnique({
@@ -170,11 +153,6 @@ export class ServiceBase<T> {
       value: any;
       columnName: string;
     }[];
-    validateRelationship?: boolean;
-    validateRelationshipValues?: {
-      value: any;
-      service: any;
-    }[];
   }): Promise<IDefaultResponse<T>> {
     const { validateUnique, validateUniqueValues } = input;
     if (validateUnique) {
@@ -184,16 +162,6 @@ export class ServiceBase<T> {
           columnName: item?.columnName,
           updating: true,
         });
-      }
-    }
-    if (input.validateRelationship) {
-      for (const item of input.validateRelationshipValues) {
-        const response = await item.service.exists(item.value);
-        if (!response) {
-          return httpExceptionHandler(
-            `Nenhum id com o valor ${item.value} encontrado, portanto, não foi possível realizar o relacionamento`,
-          );
-        }
       }
     }
 
