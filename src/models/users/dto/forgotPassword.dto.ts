@@ -5,5 +5,5 @@ export class ForgotPasswordDto {
   @ApiProperty({ required: true })
   @IsNotEmpty({ message: 'E-mail é obrigatório' })
   @IsEmail({}, { message: 'Envie um e-mail válido' })
-  email: string;
+  readonly email: string;
 }

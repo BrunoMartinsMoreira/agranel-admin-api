@@ -6,5 +6,5 @@ export class FindAllUsersDto extends FindAllParams {
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString({ message: 'Campo nome deve ser uma string' })
-  name?: string;
+  readonly name?: string;
 }
