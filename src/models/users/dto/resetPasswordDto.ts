@@ -4,17 +4,17 @@ import { ApiProperty } from '@nestjs/swagger';
 export class ResetPasswordDto {
   @ApiProperty({ required: true })
   @IsNotEmpty({ message: 'Token é obrigatório' })
-  readonly token: string;
+  token: string;
 
   @ApiProperty({ required: true })
   @IsNotEmpty({ message: 'A nova senha é obrigatória' })
   @MinLength(8, { message: 'Senha deve ter no minimo 8 caracteres' })
   @MaxLength(32, { message: 'Senha deve ter no máximo 32 caracteres' })
-  readonly newPassword: string;
+  newPassword: string;
 
   @ApiProperty({ required: true })
   @IsNotEmpty({ message: 'A confirmação da nova senha é obrigatória' })
   @MinLength(8, { message: 'Senha deve ter no minimo 8 caracteres' })
   @MaxLength(32, { message: 'Senha deve ter no máximo 32 caracteres' })
-  readonly confirmNewPassword: string;
+  confirmNewPassword: string;
 }
