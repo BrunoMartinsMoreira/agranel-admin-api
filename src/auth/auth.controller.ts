@@ -34,7 +34,7 @@ export class AuthController {
   @Public()
   @Post('refresh')
   @HttpCode(200)
-  async refresh(@Request() req, @Body() body: RefreshTokenDto) {
+  async refresh(@Request() req: RequestUser, @Body() body: RefreshTokenDto) {
     try {
       return this.authService.refresh(body);
     } catch (error) {

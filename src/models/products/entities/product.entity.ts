@@ -15,6 +15,9 @@ export class Product {
   @Column({ nullable: false })
   name: string;
 
+  @Column({ nullable: false })
+  productCode: string;
+
   @Column({
     type: 'enum',
     enum: [
@@ -53,12 +56,7 @@ export class Product {
   })
   profitMargin: number;
 
-  @Column({
-    type: 'decimal',
-    precision: 10,
-    scale: 2,
-    transformer: new ColumnNumericTransformer(),
-  })
+  @Column({ type: 'int' })
   stockQuantity: number;
 
   @CreateDateColumn()
