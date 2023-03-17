@@ -31,10 +31,6 @@ export class ProductsController {
           columnName: 'name',
           value: { name: createProductDto.name },
         },
-        {
-          columnName: 'productCode',
-          value: { productCode: createProductDto.productCode },
-        },
       ]);
     } catch (error) {
       return DefaultErrorHandler(error);
@@ -50,7 +46,6 @@ export class ProductsController {
         order: { name: 'ASC' },
         where: {
           name: query.name ? ILike(`%${query.name}%`) : undefined,
-          productCode: query.productCode ?? undefined,
           category: query.category ?? undefined,
         },
       });

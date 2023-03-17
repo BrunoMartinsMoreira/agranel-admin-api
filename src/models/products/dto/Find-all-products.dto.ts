@@ -10,11 +10,6 @@ export class FindAllProductsDto extends FindAllParams {
   @IsString({ message: 'Campo nome deve ser uma string' })
   name?: string;
 
-  @ApiProperty({ required: false })
-  @IsOptional()
-  @IsString({ message: 'Campo Codigo do produto deve ser uma string' })
-  productCode?: string;
-
   @ApiProperty({ required: true })
   @IsOptional()
   @IsIn(

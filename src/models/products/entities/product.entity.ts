@@ -15,9 +15,6 @@ export class Product {
   @Column({ nullable: false })
   name: string;
 
-  @Column({ nullable: false })
-  productCode: string;
-
   @Column({
     type: 'enum',
     enum: [
