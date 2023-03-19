@@ -40,7 +40,7 @@ export class ProductsService extends ServiceBase<Product> {
 
     return {
       error: false,
-      message: [DefaultMessages.QUERY_SUCCESS],
+      message: DefaultMessages.QUERY_SUCCESS,
       data: {
         count: rows,
         rows: products,

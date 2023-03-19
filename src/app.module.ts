@@ -9,6 +9,8 @@ import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmAsyncConfig } from './config/typeorm.config';
 import { ProductsModule } from './models/products/products.module';
+import { UsersModule } from './models/users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -40,6 +42,8 @@ import { ProductsModule } from './models/products/products.module';
       isGlobal: true,
       cache: true,
     }),
+    UsersModule,
+    AuthModule,
     ProductsModule,
   ],
   controllers: [AppController],

@@ -40,7 +40,7 @@ export class UsersService extends ServiceBase<User> {
 
     return {
       error: false,
-      message: [DefaultMessages.CREATED],
+      message: DefaultMessages.CREATED,
       data: data,
     };
   }
@@ -52,7 +52,7 @@ export class UsersService extends ServiceBase<User> {
     });
 
     if (!user) {
-      return httpExceptionHandler(DefaultMessages.DATA_NOT_FOUND);
+      return httpExceptionHandler('Email ou senha incorretos');
     }
 
     return user;
@@ -77,7 +77,7 @@ export class UsersService extends ServiceBase<User> {
       throw new HttpException(
         {
           error: true,
-          message: ['E-mail não cadastrado'],
+          message: 'E-mail não cadastrado',
           data: null,
         },
         HttpStatus.BAD_REQUEST,
@@ -104,7 +104,7 @@ export class UsersService extends ServiceBase<User> {
 
     return {
       error: false,
-      message: ['Token enviado para o email informado'],
+      message: 'Token enviado para o email informado',
       data: null,
     };
   }
@@ -118,7 +118,7 @@ export class UsersService extends ServiceBase<User> {
       throw new HttpException(
         {
           error: true,
-          message: ['As senhas não conferem'],
+          message: 'As senhas não conferem',
           data: null,
         },
         HttpStatus.BAD_REQUEST,
@@ -165,7 +165,7 @@ export class UsersService extends ServiceBase<User> {
 
     return {
       error: false,
-      message: ['Senha atualizada com sucesso'],
+      message: 'Senha atualizada com sucesso',
       data: null,
     };
   }

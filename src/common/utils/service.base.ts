@@ -33,7 +33,7 @@ export class ServiceBase<T> {
 
     return {
       error: false,
-      message: [DefaultMessages.QUERY_SUCCESS],
+      message: DefaultMessages.QUERY_SUCCESS,
       data: {
         rows: result,
         count: total,
@@ -61,7 +61,7 @@ export class ServiceBase<T> {
 
     return {
       error: false,
-      message: [DefaultMessages.QUERY_SUCCESS],
+      message: DefaultMessages.QUERY_SUCCESS,
       data,
     };
   }
@@ -88,7 +88,7 @@ export class ServiceBase<T> {
 
     return {
       error: false,
-      message: [DefaultMessages.CREATED],
+      message: DefaultMessages.QUERY_SUCCESS,
       data: newData as T,
     };
   }
@@ -107,7 +107,7 @@ export class ServiceBase<T> {
 
     return {
       error: false,
-      message: [DefaultMessages.QUERY_SUCCESS],
+      message: DefaultMessages.QUERY_SUCCESS,
       data,
     };
   }
@@ -128,7 +128,7 @@ export class ServiceBase<T> {
     if (result.affected > 0) {
       return {
         error: false,
-        message: [DefaultMessages.DELETED],
+        message: DefaultMessages.QUERY_SUCCESS,
         data: null,
       };
     }
@@ -173,7 +173,7 @@ export class ServiceBase<T> {
       });
       return {
         error: false,
-        message: [DefaultMessages.UPDATED],
+        message: DefaultMessages.QUERY_SUCCESS,
         data: data,
       };
     }

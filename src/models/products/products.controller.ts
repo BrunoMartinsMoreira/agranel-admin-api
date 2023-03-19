@@ -17,7 +17,6 @@ import { FindAllProductsDto } from './dto/Find-all-products.dto';
 import { ILike } from 'typeorm';
 import { Response } from 'express';
 import { GenerateOrderDto } from './dto/generate-order.dto';
-import { Public } from 'src/auth/isPublic';
 
 @Controller('products')
 export class ProductsController {
@@ -63,7 +62,6 @@ export class ProductsController {
     }
   }
 
-  @Public()
   @Post('generate-order')
   async generateOrder(
     @Body() generateOrderDto: GenerateOrderDto,

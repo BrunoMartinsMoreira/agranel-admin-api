@@ -53,7 +53,12 @@ export class Product {
   })
   profitMargin: number;
 
-  @Column({ type: 'int' })
+  @Column({
+    type: 'decimal',
+    precision: 10,
+    scale: 2,
+    transformer: new ColumnNumericTransformer(),
+  })
   stockQuantity: number;
 
   @CreateDateColumn()

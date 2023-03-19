@@ -4,7 +4,7 @@ export const httpExceptionHandler = (message: string) => {
   throw new HttpException(
     {
       error: true,
-      message: [message],
+      message,
       data: null,
     },
     HttpStatus.BAD_REQUEST,

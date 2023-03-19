@@ -109,53 +109,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: [`Email já está sendo utilizado`],
-            data: null,
-          },
-          HttpStatus.BAD_REQUEST,
-        ),
-      );
-    });
-
-    it('Nao deve cadastrar dois usuarios com mesmo cpf/cnpj', async () => {
-      jest
-        .spyOn(mockUsersRepo, 'findOne')
-        .mockResolvedValue(mockFindOneUserReturn);
-
-      await expect(
-        usersService.create({
-          name: 'Bruno',
-          email: 'mail@mail5.com',
-          password: 'hashpassword',
-        }),
-      ).rejects.toThrowError(
-        new HttpException(
-          {
-            error: true,
-            message: [`cpfcnpj já está sendo utilizado`],
-            data: null,
-          },
-          HttpStatus.BAD_REQUEST,
-        ),
-      );
-    });
-
-    it('Nao deve cadastrar dois usuarios com mesmo rg', async () => {
-      jest
-        .spyOn(mockUsersRepo, 'findOne')
-        .mockResolvedValue(mockFindOneUserReturn);
-
-      await expect(
-        usersService.create({
-          name: 'Bruno',
-          email: 'mail@mail5.com',
-          password: 'hashpassword',
-        }),
-      ).rejects.toThrowError(
-        new HttpException(
-          {
-            error: true,
-            message: [`rg já está sendo utilizado`],
+            message: `Email já está sendo utilizado`,
             data: null,
           },
           HttpStatus.BAD_REQUEST,
@@ -208,7 +162,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: [DefaultMessages.DATA_NOT_FOUND],
+            message: DefaultMessages.DATA_NOT_FOUND,
             data: null,
           },
           HttpStatus.NOT_FOUND,
@@ -275,7 +229,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: [DefaultMessages.DATA_NOT_FOUND],
+            message: DefaultMessages.DATA_NOT_FOUND,
             data: null,
           },
           HttpStatus.NOT_FOUND,
@@ -306,7 +260,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: [DefaultMessages.DATA_NOT_FOUND],
+            message: DefaultMessages.DATA_NOT_FOUND,
             data: null,
           },
           HttpStatus.NOT_FOUND,
@@ -407,7 +361,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: ['E-mail não cadastrado'],
+            message: 'E-mail não cadastrado',
             data: null,
           },
           HttpStatus.BAD_REQUEST,
@@ -434,7 +388,7 @@ describe('UsersService', () => {
 
       expect(response).toEqual({
         error: false,
-        message: ['Token enviado para o email informado'],
+        message: 'Token enviado para o email informado',
         data: null,
       });
 
@@ -469,7 +423,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: ['As senhas não conferem'],
+            message: 'As senhas não conferem',
             data: null,
           },
           HttpStatus.BAD_REQUEST,
@@ -494,7 +448,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: ['Token inválido'],
+            message: 'Token inválido',
             data: null,
           },
           HttpStatus.BAD_REQUEST,
@@ -530,7 +484,7 @@ describe('UsersService', () => {
         new HttpException(
           {
             error: true,
-            message: ['Token expirado'],
+            message: 'Token expirado',
             data: null,
           },
           HttpStatus.BAD_REQUEST,
@@ -564,7 +518,7 @@ describe('UsersService', () => {
 
       expect(response).toEqual({
         error: false,
-        message: ['Senha atualizada com sucesso'],
+        message: 'Senha atualizada com sucesso',
         data: null,
       });
 

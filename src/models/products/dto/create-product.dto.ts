@@ -9,11 +9,6 @@ export class CreateProductDto {
   name: string;
 
   @ApiProperty({ required: true })
-  @IsNotEmpty({ message: 'Codigo do produto é um campo obrigatório' })
-  @IsString({ message: 'Codigo do produto deve ser uma string' })
-  productCode: string;
-
-  @ApiProperty({ required: true })
   @IsNotEmpty({ message: 'Categoria do produto é um campo obrigatório' })
   @IsIn(
     [

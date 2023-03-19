@@ -30,7 +30,7 @@ export class AuthService {
     await this.usersService.updateRefreshToken(null, user.id);
     return {
       error: false,
-      message: ['Logout realizado com sucesso'],
+      message: 'Logout realizado com sucesso',
       data: null,
     };
   }

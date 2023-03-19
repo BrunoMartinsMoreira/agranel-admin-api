@@ -1,5 +1,5 @@
 export interface IDefaultResponse<T> {
   error: boolean;
-  message: string[];
+  message: string;
   data: T;
 }
