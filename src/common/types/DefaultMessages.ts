@@ -12,6 +12,6 @@ export enum DefaultMessages {
   DELETED = 'Deletado com sucesso.',
   UPDATED = 'Atualizado com sucesso.',
   EMAIL_OR_PASS_INVALID = 'E-mail e/ou senha incorretos.',
-  TOKEN_NOT_FOUND = 'Token de autorização ausente ou inválido',
+  TOKEN_NOT_FOUND = 'invalid_or_missing_token',
   NOT_AUTHORIZED = 'Você não possui permissão',
 }
