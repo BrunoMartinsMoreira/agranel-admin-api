@@ -1,9 +1,9 @@
 export enum ProductCategory {
-  TEMPEROS = 'tempero',
+  TEMPEROS = 'temperos',
   CHAS = 'chas',
   OLEAGINOSAS = 'oleaginosas',
   FARINHAS = 'farinhas',
   SEMENTES = 'sementes',
-  FRUTAS_DESIDRATADAS = 'frutas_desidratadass',
+  FRUTAS_DESIDRATADAS = 'frutas_desidratadas',
   OUTROS = 'outros',
 }
