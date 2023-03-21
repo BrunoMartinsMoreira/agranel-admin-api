@@ -82,7 +82,7 @@ export class AuthService {
       throw new HttpException(
         {
           error: true,
-          message: 'Refresh token inválido',
+          message: 'invalid_refresh_token',
           data: null,
         },
         HttpStatus.FORBIDDEN,
@@ -96,7 +96,7 @@ export class AuthService {
       throw new HttpException(
         {
           error: true,
-          message: 'Refresh token inválido garai',
+          message: 'invalid_refresh_token',
           data: error,
         },
         HttpStatus.FORBIDDEN,
@@ -111,6 +111,7 @@ export class AuthService {
 
     return {
       access_token: this.jwtService.sign(payload),
+      refresh_token: user.refreshToken,
       name: user.name,
       email: user.email,
       id: user.id,
