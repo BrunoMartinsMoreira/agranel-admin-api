@@ -24,6 +24,7 @@ export class ProductsController {
 
   @Post()
   async create(@Body() createProductDto: CreateProductDto) {
+    console.log(createProductDto);
     try {
       return this.productsService.store(createProductDto, true, [
         {

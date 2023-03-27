@@ -88,7 +88,7 @@ export class ServiceBase<T> {
 
     return {
       error: false,
-      message: DefaultMessages.QUERY_SUCCESS,
+      message: DefaultMessages.CREATED,
       data: newData as T,
     };
   }

@@ -1,7 +1,5 @@
 import { MailerModule } from '@nestjs-modules/mailer';
 import { Module, ValidationPipe } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
 import { ConfigModule } from '@nestjs/config';
 import { APP_PIPE, APP_GUARD } from '@nestjs/core';
@@ -46,9 +44,7 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     ProductsModule,
   ],
-  controllers: [AppController],
   providers: [
-    AppService,
     {
       provide: APP_PIPE,
       useClass: ValidationPipe,
